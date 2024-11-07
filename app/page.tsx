@@ -5,7 +5,7 @@ import InitializeDatabase from "@/components/InitializeDatabase";
 export default function Home() {
   return (
     <>
-      <InitializeDatabase/>
+      {/* <InitializeDatabase/> */}
       <Navbar navTarget="home"/>
     </>
   );
