@@ -1,12 +1,13 @@
+'use client'
 import Image from "next/image";
 import Navbar from "../components/Navbar"
-import Link from 'next/link'
-import InitializeDatabase from "@/components/InitializeDatabase";
+import { SessionProvider } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
+
 export default function Home() {
   return (
-    <>
-      {/* <InitializeDatabase/> */}
+    <SessionProvider>
       <Navbar navTarget="home"/>
-    </>
-  );
+    </SessionProvider>
+  )
 }

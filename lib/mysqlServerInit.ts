@@ -49,4 +49,20 @@ export async function mysqlServerInit() {
     } catch (err) {
         console.log(err);
     }
+
+    try {
+        const [results, fields] = await connection.query(
+            `CREATE TABLE IF NOT EXISTS ServerSettings (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                settingName VARCHAR(255) UNIQUE NOT NULL,
+                valueField VARCHAR(255)
+            );`
+        );
+
+        console.log("Server Table initialized / Verified;"); // results contains rows returned by server
+    } catch (err) {
+        console.log(err);
+    }
 }
