@@ -23,7 +23,7 @@ export async function mysqlServerInit() {
                 ipAddress VARCHAR(255) NOT NULL,
                 dnsName VARCHAR(255) NOT NULL,
                 adminOnly BOOLEAN DEFAULT FALSE,
-                wazuhID INT NOT NULL,
+                wazuhID INT,
                 tier ENUM('TIER1', 'TIER2', 'TIER3') DEFAULT 'TIER2'
             );`
         );

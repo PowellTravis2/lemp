@@ -69,8 +69,8 @@ export default function Navbar({ navTarget }: { navTarget: string }) {
     } else {
         return (
             <>
-                Not signed in <br />
-                <button onClick={() => signIn()}>Sign in</button>
+                {/* Not signed in <br /> */}
+                <button className={navStyles.Login} onClick={() => signIn() }>Sign in</button>
             </>
         )
     }
