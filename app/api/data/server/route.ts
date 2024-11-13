@@ -7,8 +7,6 @@ export async function GET(req) {
     const session = await getServerSession(authOptions)
     if(session) {
         var userIsAdmin = session?.roles.includes("Admin")
-        console.log(userIsAdmin)
-        return NextResponse.json({ message: `${JSON.stringify(serverQuery({isAdmin: userIsAdmin}))}`}, { status: 200})
+        return NextResponse.json(await serverQuery({isAdmin: userIsAdmin}), { status: 200})
     }
-    
 }
