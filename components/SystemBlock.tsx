@@ -76,24 +76,9 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
                     <h4>Additional Details</h4>
                     {isEditing ? (
                         <div>
-                            <label>
-                                OS: 
-                                <input
-                                    type="text"
-                                    name="os"
-                                    value={editedSystem.os}
-                                    onChange={handleChange}
-                                />
-                            </label>
-                            <label>
-                                IP Address:
-                                <input
-                                    type="text"
-                                    name="ipAddress"
-                                    value={editedSystem.ipAddress}
-                                    onChange={handleChange}
-                                />
-                            </label>
+                            <p>OS: {editedSystem.os}</p>
+                            <p>IP Address: {editedSystem.ipAddress}</p>
+                            <p>DN: {editedSystem.dn}</p>
                             <label>
                                 Location:
                                 <input
@@ -136,6 +121,7 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
                         <div>
                             <p>OS: {editedSystem.os}</p>
                             <p>IP Address: {editedSystem.ipAddress}</p>
+                            <p>DN: {editedSystem.dn}</p>
                             <p>Location: {editedSystem.location}</p>
                             <p>Rack: {editedSystem.rack}</p>
                             <p>Rack Location: {editedSystem.rackUnits}</p>

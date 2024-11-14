@@ -11,11 +11,10 @@ const connectionConfig = {
 export async function serverSQLWrite({system, key, value}: {system: String, key: String}) {
     const connection = await mysql.createConnection(connectionConfig);
     try {
-        const [results, fields] = await connection.query(
-            `UPDATE Server SET ${key}= ${value} WHERE name='${system}'`
-        );
+        const query = `UPDATE Server SET \`${key}\` = ? WHERE name = ?`;
+        const [result] = await connection.execute(query, [value, system]);
         connection.end()
-        return results
+        return result
     } catch (err) {
         console.log(err);
         connection.end()
