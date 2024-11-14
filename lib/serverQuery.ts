@@ -15,8 +15,10 @@ export async function serverQuery({isAdmin}: {isAdmin: Boolean}) {
         const [results, fields] = await connection.query(
             `SELECT * from Server WHERE adminOnly=0 OR adminOnly=${filVal}`
         );
+        connection.end()
         return results
     } catch (err) {
         console.log(err);
+        connection.end()
     }
 }

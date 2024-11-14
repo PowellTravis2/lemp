@@ -14,8 +14,10 @@ export async function gpQuery() {
         const [results, fields] = await connection.query(
             `SELECT * from GroupPolicy;`
         );
+        connection.end()
         return results
     } catch (err) {
         console.log(err);
+        connection.end()
     }
 }

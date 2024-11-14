@@ -31,6 +31,7 @@ export async function mysqlServerInit() {
         console.log("Server Table initialized / Verified;"); // results contains rows returned by server
     } catch (err) {
         console.log(err);
+        connection.end()
     }
 
     try {
@@ -48,6 +49,7 @@ export async function mysqlServerInit() {
         console.log("Group Policy Table initialized / Verified;"); // results contains rows returned by server
     } catch (err) {
         console.log(err);
+        connection.end()
     }
 
     try {
@@ -60,9 +62,10 @@ export async function mysqlServerInit() {
                 valueField VARCHAR(255)
             );`
         );
-
+        connection.end()
         console.log("Server Table initialized / Verified;"); // results contains rows returned by server
     } catch (err) {
         console.log(err);
+        connection.end()
     }
 }

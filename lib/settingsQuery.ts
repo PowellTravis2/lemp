@@ -14,8 +14,10 @@ export async function settingsQuery() {
         const [results, fields] = await connection.query(
             `SELECT * from ServerSettings;`
         );
+        connection.end()
         return results
     } catch (err) {
         console.log(err);
+        connection.end()
     }
 }

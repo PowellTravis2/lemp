@@ -9,7 +9,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 export default function Navbar({ navTarget }: { navTarget: string }) {
     const { data: session } = useSession();
     if (session) {
-        console.log(session?.roles.includes("Admin"))
         if (session?.roles.includes("Admin")) {
             return (
                 <div className={navStyles.barGroup}>
