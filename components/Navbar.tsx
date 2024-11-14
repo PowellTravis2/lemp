@@ -25,9 +25,9 @@ export default function Navbar({ navTarget }: { navTarget: string }) {
                                 <li className={navStyles.navItem}><Link href="/systems"><h3>Systems</h3></Link></li>
                             )}
                             {navTarget === "grouppolicy" ? (
-                                <li className={`${navStyles.navItem} ${navStyles.navItemActive}`}><Link href="/grouppolicy"><h3>Group Policies</h3></Link></li>
+                                <li className={`${navStyles.navItem} ${navStyles.navItemActive}`}><Link href="/grouppolicy"><h3>Policies</h3></Link></li>
                             ) : (
-                                <li className={navStyles.navItem}><Link href="/grouppolicy"><h3>Group Policies</h3></Link></li>
+                                <li className={navStyles.navItem}><Link href="/grouppolicy"><h3>Policies</h3></Link></li>
                             )}
                             {navTarget === "settings" ? (
                                 <li className={`${navStyles.navItem} ${navStyles.navItemActive} ${navStyles.Admin}`}><Link href="/settings"><h3>Settings</h3></Link></li>

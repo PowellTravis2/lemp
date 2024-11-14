@@ -44,7 +44,7 @@ export async function mysqlServerInit() {
                 updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                 name VARCHAR(255) UNIQUE NOT NULL,
                 smbPath VARCHAR(255) NOT NULL,
-                linuxEquivalent VARCHAR(255) NOT NULL
+                linuxEquivalent VARCHAR(255)
             );`
         );
 
