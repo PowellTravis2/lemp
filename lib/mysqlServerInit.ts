@@ -24,7 +24,9 @@ export async function mysqlServerInit() {
                 dnsName VARCHAR(255) NOT NULL,
                 adminOnly BOOLEAN DEFAULT FALSE,
                 wazuhID INT,
-                tier ENUM('TIER1', 'TIER2', 'TIER3') DEFAULT 'TIER2'
+                tier ENUM('TIER1', 'TIER2', 'TIER3') DEFAULT 'TIER2',
+                os VARCHAR(255),
+                dn VARCHAR(255)
             );`
         );
 

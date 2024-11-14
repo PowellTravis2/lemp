@@ -4,10 +4,16 @@ import { SessionProvider } from "next-auth/react";
 import { useState, useEffect } from 'react';
 import SystemBlock from "@/components/SystemBlock";
 import global from "@/styles/global.module.css"
+import systems from "@/styles/systems.module.css"
 
 export default function Systems() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [expandedSystemId, setExpandedSystemId] = useState(null);
+
+  const toggleExpand = (id) => {
+      setExpandedSystemId((prevId) => (prevId === id ? null : id));
+  };
   let blockView = true;
   useEffect(() => {
     async function fetchData() {
@@ -28,10 +34,15 @@ export default function Systems() {
   return (
     <SessionProvider>
       <Navbar navTarget="systems" />
-      <div className={global.usefulArea}>
+      <div className={`${global.usefulArea} ${systems.gridArea}`}>
         {
           data && data.map((item, index) => (
-            <SystemBlock system={ item } />
+            <SystemBlock
+                    key={item.name}
+                    system={item}
+                    isExpanded={expandedSystemId === item.name}
+                    toggleExpand={() => toggleExpand(item.name)}
+                />
           )
           )
         }
