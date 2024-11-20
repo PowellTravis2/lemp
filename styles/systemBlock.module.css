@@ -17,7 +17,7 @@
     max-width: 400px;
     background-color: #fff; /* White background for the box */
     padding: 20px;
-    padding-top: 200px;
+    padding-top: 80px;
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
