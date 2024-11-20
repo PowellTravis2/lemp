@@ -1,14 +1,14 @@
 'use client'
-import Image from "next/image";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
+import Home from "@/components/Home"; // Updated Home component
 import { SessionProvider } from "next-auth/react";
-import { signIn, signOut, useSession } from "next-auth/react";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <SessionProvider>
-      <Navbar navTarget="home"/>
-      
+      {/* The Navbar is only shown when the user is signed in */}
+      <Navbar navTarget="home" />
+      <Home /> {/* Home component where useSession is used */}
     </SessionProvider>
-  )
+  );
 }

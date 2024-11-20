@@ -2,14 +2,14 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import systemBlock from '../styles/systemBlock.module.css';
-import Link from 'next/link'
-import { useSession } from "next-auth/react"
-
+import Link from 'next/link';
+import { useSession } from "next-auth/react";
 
 export default function SystemBlock({ system, isExpanded, toggleExpand }) {
     const [isEditing, setIsEditing] = useState(false);
     const [editedSystem, setEditedSystem] = useState({ ...system });
     const { data: session } = useSession();
+
     const handleEdit = () => {
         setIsEditing(true);
     };
@@ -21,8 +21,6 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name)
-        console.log(value)
         setEditedSystem((prevState) => ({
             ...prevState,
             [name]: value
@@ -35,7 +33,7 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
                 'valName': name,
                 'valVal': value
             }
-          });
+        });
     };
 
     return (
@@ -76,59 +74,83 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
                     <h4>Additional Details</h4>
                     {isEditing ? (
                         <div>
-                            <p>OS: {editedSystem.os}</p>
-                            <p>IP Address: {editedSystem.ipAddress}</p>
-                            <p>DN: {editedSystem.dn}</p>
-                            <label>
-                                Location:
+                            <div className="field">
+                                <label className={systemBlock.boldLabel}>OS:</label>
+                                <input
+                                    type="text"
+                                    name="os"
+                                    value={editedSystem.os}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="field">
+                                <label className={systemBlock.boldLabel}>IP Address:</label>
+                                <input
+                                    type="text"
+                                    name="ipAddress"
+                                    value={editedSystem.ipAddress}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="field">
+                                <label className={systemBlock.boldLabel}>DN:</label>
+                                <input
+                                    type="text"
+                                    name="dn"
+                                    value={editedSystem.dn}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="field">
+                                <label className={systemBlock.boldLabel}>Location:</label>
                                 <input
                                     type="text"
                                     name="location"
                                     value={editedSystem.location}
                                     onChange={handleChange}
                                 />
-                            </label>
-                            <label>
-                                Rack:
+                            </div>
+                            <div className="field">
+                                <label className={systemBlock.boldLabel}>Rack:</label>
                                 <input
                                     type="text"
                                     name="rack"
                                     value={editedSystem.rack}
                                     onChange={handleChange}
                                 />
-                            </label>
-                            <label>
-                                Rack Location:
+                            </div>
+                            <div className="field">
+                                <label className={systemBlock.boldLabel}>Rack Location:</label>
                                 <input
                                     type="text"
                                     name="rackUnits"
                                     value={editedSystem.rackUnits}
                                     onChange={handleChange}
                                 />
-                            </label>
-                            <label>
-                                Wazuh System ID:
+                            </div>
+                            <div className="field">
+                                <label className={systemBlock.boldLabel}>Wazuh System ID:</label>
                                 <input
                                     type="text"
                                     name="wazuhID"
                                     value={editedSystem.wazuhID}
                                     onChange={handleChange}
                                 />
-                            </label>
-                            <button onClick={handleSave}>Done</button>
+                            </div>
+                            <button className={systemBlock.holdButton} onClick={handleSave}>Done</button>
                         </div>
                     ) : (
                         <div>
-                            <p>OS: {editedSystem.os}</p>
-                            <p>IP Address: {editedSystem.ipAddress}</p>
-                            <p>DN: {editedSystem.dn}</p>
-                            <p>Location: {editedSystem.location}</p>
-                            <p>Rack: {editedSystem.rack}</p>
-                            <p>Rack Location: {editedSystem.rackUnits}</p>
-                            <p>Wazuh System ID: {editedSystem.wazuhID}</p>
+                            <p><strong>OS:</strong> {editedSystem.os}</p>
+                            <p><strong>IP Address:</strong> {editedSystem.ipAddress}</p>
+                            <p><strong>DN:</strong> {editedSystem.dn}</p>
+                            <p><strong>Location:</strong> {editedSystem.location}</p>
+                            <p><strong>Rack:</strong> {editedSystem.rack}</p>
+                            <p><strong>Rack Location:</strong> {editedSystem.rackUnits}</p>
+                            <p><strong>Wazuh System ID:</strong> {editedSystem.wazuhID}</p>
                             {session?.roles.includes("Admin") ? (
-                                <button onClick={handleEdit}>Edit</button>
-                            ): (
+                                <button className={systemBlock.boldButton} onClick={handleEdit}>Edit</button>
+                            ) : (
                                 <p>Not Admin</p>
                             )}
                         </div>
