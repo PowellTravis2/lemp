@@ -1,9 +1,11 @@
 'use client'
 import Image from "next/image";
 import React, { useState } from "react";
-import systemBlock from '../styles/systemBlock.module.css';
+import groupPolicy from '../styles/groupPolicy.module.css';
 import Link from 'next/link'
 import { useSession } from "next-auth/react"
+import CodeBlock from "./CodeBlock";
+import { Span } from "next/dist/trace";
 
 
 export default function GPLine({ gp, isExpanded, toggleExpand }) {
@@ -35,17 +37,56 @@ export default function GPLine({ gp, isExpanded, toggleExpand }) {
                 'valName': name,
                 'valVal': value
             }
-          });
+        });
     };
 
     return (
-        <div>
-            <div>
+        <div className={groupPolicy.gpLineContainer}>
+            <div className={groupPolicy.gpLineName}>
                 <p>{gp.name}</p>
             </div>
-            <div>
-                <p></p>
+            <div className={groupPolicy.gpLineSMB}>
+                <p>{gp.smbPath}</p>
+            </div> 
+            <div className={groupPolicy.systemDropDown}>
+                <button onClick={toggleExpand}>
+                    <Image src="/down-2-svgrepo-com.svg" width={20} height={20} alt="DropDown" />
+                </button>
             </div>
+
+            {isExpanded && (
+                <div className={groupPolicy.expandedDetails}>
+                    {/* <h4>Additional Details</h4> */}
+                    {isEditing ? (
+                        <div >
+                            <p>DN: {editedSystem.dn}</p>
+                            <label>
+                                Linux Application:
+                                {/* <br> */}
+                                <input
+                                    type="text"
+                                    name="location"
+                                    value={gp.linuxEquivalent}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            
+                            <button onClick={handleSave}>Done</button>
+                        </div>
+                    ) : (
+                        <div>
+                            <p>DN: {editedSystem.dn}</p>
+                            <p>Linux Application:</p>
+                            <CodeBlock code={gp.linuxEquivalent} language="bash" />
+                            {session?.roles.includes("Admin") ? (
+                                <button onClick={handleEdit}>Edit</button>
+                            ) : (
+                                <p>Not Admin</p>
+                            )}
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
     );
 }

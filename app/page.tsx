@@ -8,6 +8,7 @@ export default function Home() {
   return (
     <SessionProvider>
       <Navbar navTarget="home"/>
+      
     </SessionProvider>
   )
 }

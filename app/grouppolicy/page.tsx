@@ -4,9 +4,10 @@ import Navbar from "../../components/Navbar"
 import { SessionProvider } from "next-auth/react";
 import global from "@/styles/global.module.css"
 import GPLine from "@/components/GPLine";
+import groupPolicy from "@/styles/groupPolicy.module.css"
 import { useState, useEffect } from 'react';
 
-export default function Systems() {
+export default function GroupPolicy() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [expandedSystemId, setExpandedSystemId] = useState(null);
@@ -34,7 +35,7 @@ export default function Systems() {
   return (
     <SessionProvider>
       <Navbar navTarget="grouppolicy" />
-      <div className={`${global.usefulArea}`}>
+      <div className={`${global.usefulArea} ${groupPolicy.gpArea}`}>
         {
           data && data.map((item, index) => (
             <GPLine
