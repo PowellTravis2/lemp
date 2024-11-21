@@ -23,8 +23,6 @@ export default function GPLine({ gp, isExpanded, toggleExpand }) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name)
-        console.log(value)
         setEditedSystem((prevState) => ({
             ...prevState,
             [name]: value
@@ -56,16 +54,14 @@ export default function GPLine({ gp, isExpanded, toggleExpand }) {
 
             {isExpanded && (
                 <div className={groupPolicy.expandedDetails}>
-                    {/* <h4>Additional Details</h4> */}
                     {isEditing ? (
-                        <div >
-                            <p>DN: {editedSystem.dn}</p>
+                        <div>
+                            <p>DN: {gp.dn}</p>
                             <label>
                                 Linux Application:
-                                {/* <br> */}
                                 <input
                                     type="text"
-                                    name="location"
+                                    name="linuxEquivalent"
                                     value={gp.linuxEquivalent}
                                     onChange={handleChange}
                                 />
@@ -75,7 +71,7 @@ export default function GPLine({ gp, isExpanded, toggleExpand }) {
                         </div>
                     ) : (
                         <div>
-                            <p>DN: {editedSystem.dn}</p>
+                            <p>DN: {gp.dn}</p>
                             <p>Linux Application:</p>
                             <CodeBlock code={gp.linuxEquivalent} language="bash" />
                             {session?.roles.includes("Admin") ? (

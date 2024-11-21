@@ -1,157 +1,142 @@
-
 .boldButton {
     font-weight: bold; /* Makes the text inside buttons bold */
     color: #0056b3;
-  }
-  
-  
-  .boldButton:hover {
-    background-color: #f0f0f0; /* Slightly change background on hover */
+}
+
+.boldButton:hover {
+    background-color: #f0f0f0;
     cursor: pointer;
-  }
-  
+}
+
 .container {
+    background-color: #e8e8e8;
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 400px;
-    background-color: #fff; /* White background for the box */
     padding: 20px;
     padding-top: 80px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
-    margin-bottom: 20px; /* Space between boxes */
-  }
-  
-  .container:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    transform: translateY(-5px); /* Lift the box on hover */
-  }
-  
-  /* Expanded details section */
-  .expandedDetails {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.expandedDetails {
     margin-top: 20px;
-    border-top: 2px solid #ddd; /* Separator line */
+    border-top: 2px solid #e8e8e8;;
     padding-top: 15px;
-  }
-  
-  /* When in edit mode, we use a flexbox layout for better alignment */
-  .expandedDetails.editMode {
+}
+
+.expandedDetails.editMode {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between input fields */
-  }
-  
-  /* Style for the system logo */
-  .systemLogo {
+    gap: 15px;
+}
+
+.systemLogo {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
-  }
-  
-  .systemLogo img {
+}
+
+.systemLogo img {
     width: 50px;
     height: 50px;
     object-fit: cover;
-    border-radius: 50%; /* Make logos circular */
-  }
-  
-  /* Style for the system name */
-  .systemName {
+    border-radius: 50%;
+}
+
+.systemName {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
-  }
-  
-  /* Style for the system status */
-  .systemStatus {
+}
+
+.systemStatus {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
-  }
-  
-  .systemReachable {
+}
+
+.systemReachable {
     width: 15px;
     height: 15px;
-    background-color: green; /* Green for reachable */
+    background-color: green;
     border-radius: 50%;
-  }
-  
-  .systemUnreachable {
+}
+
+.systemUnreachable {
     width: 15px;
     height: 15px;
-    background-color: red; /* Red for unreachable */
+    background-color: red;
     border-radius: 50%;
-  }
-  
-  .systemUnknown {
+}
+
+.systemUnknown {
     width: 15px;
     height: 15px;
-    background-color: gray; /* Gray for unknown */
+    background-color: gray;
     border-radius: 50%;
-  }
-  
-  /* Style for system IP address and DN */
-  .systemIP p {
+}
+
+.systemIP p {
     font-size: 0.9em;
-    color: #555; /* Dark grey text */
+    color: #555;
     margin: 0;
     text-align: center;
-  }
-  
-  /* Style for system dropdown button */
-  .systemDropDown {
+}
+
+.systemDropDown {
     display: flex;
     justify-content: center;
     margin-top: 15px;
-  }
-  
-  .systemDropDown button {
-    background-color: #007BFF; /* Blue background */
+}
+
+.systemDropDown button {
+    background-color: #007bff;
     color: #fff;
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .systemDropDown button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  /* General form labels and inputs */
-  .expandedDetails label {
+}
+
+.systemDropDown button:hover {
+    background-color: #0056b3;
+}
+
+.expandedDetails label {
     display: block;
     margin-bottom: 8px;
     font-size: 0.9em;
     color: #333;
-  }
-  
-  .expandedDetails input {
+}
+
+.expandedDetails input {
     width: 100%;
-    max-width: 300px; /* Fixed width for inputs to prevent expansion */
+    max-width: 300px;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
-    background-color: #f9f9f9; /* Light gray background for input fields */
+    background-color: #f9f9f9;
     color: #333;
-    box-sizing: border-box; /* Ensures padding does not affect width */
-  }
-  
-  .expandedDetails input:focus {
+    box-sizing: border-box;
+}
+
+.expandedDetails input:focus {
     outline: none;
-    border-color: #007BFF; /* Blue border on focus */
-    background-color: #ffffff; /* White background when focused */
-  }
-  
-  /* Edit button and done button */
-  .expandedDetails button {
-    background-color: #28a745; /* Green background */
+    border-color: #007bff;
+    background-color: #ffffff;
+}
+
+.expandedDetails button {
+    background-color: #28a745;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -159,16 +144,15 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 1em;
-    margin-top: 10px; /* Add space above the button */
-  }
-  
-  .expandedDetails button:hover {
-    background-color: #218838; /* Darker green on hover */
-  }
-  
-  /* Style for the "Not Admin" message */
-  .expandedDetails p {
+    margin-top: 10px;
+}
+
+.expandedDetails button:hover {
+    background-color: #218838;
+}
+
+.expandedDetails p {
     font-size: 0.9em;
-    color: #888; /* Light grey text for "Not Admin" */
-    margin-top: 10px; /* Space above the message */
-  }
+    color: #888;
+    margin-top: 10px;
+}

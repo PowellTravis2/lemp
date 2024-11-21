@@ -20,7 +20,7 @@ export default function Systems() {
       setIsLoading(true);
       const res = await fetch('/api/data/server');
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setData(data);
       setIsLoading(false);
     }

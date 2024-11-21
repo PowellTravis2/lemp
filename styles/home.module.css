@@ -25,7 +25,7 @@
 
 .horizontalLine {
     position: absolute; /* Allows precise placement */
-    top: 21.5%; /* Adjust this value to lower it behind the navbar */
+    top: 18%; /* Adjust this value to lower it behind the navbar */
     left: 0; /* Keep it aligned to the left */
     width: 100%; /* Stretch across the screen */
     height: 2px; /* Thickness of the line */
