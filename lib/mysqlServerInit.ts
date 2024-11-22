@@ -26,7 +26,8 @@ export async function mysqlServerInit() {
                 wazuhID INT,
                 tier ENUM('TIER1', 'TIER2', 'TIER3') DEFAULT 'TIER2',
                 os VARCHAR(255),
-                dn VARCHAR(255)
+                dn VARCHAR(255),
+                reachable BOOLEAN DEFAULT FALSE
             );`
         );
 
@@ -42,9 +43,12 @@ export async function mysqlServerInit() {
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
                 updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-                name VARCHAR(255) UNIQUE NOT NULL,
+                name VARCHAR(255) NOT NULL,
+                dn VARCHAR(255) NOT NULL,
                 smbPath VARCHAR(255) NOT NULL,
-                linuxEquivalent VARCHAR(255)
+                linuxEquivalent VARCHAR(255),
+                schedule VARCHAR(255),
+                scheduleEnabled BOOLEAN DEFAULT FALSE
             );`
         );
 
@@ -65,7 +69,7 @@ export async function mysqlServerInit() {
             );`
         );
         connection.end()
-        console.log("Server Table initialized / Verified;"); // results contains rows returned by server
+        console.log("Server Settings Table initialized / Verified;"); // results contains rows returned by server
     } catch (err) {
         console.log(err);
         connection.end()

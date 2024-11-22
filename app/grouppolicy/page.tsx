@@ -15,7 +15,6 @@ export default function GroupPolicy() {
   const toggleExpand = (id) => {
       setExpandedSystemId((prevId) => (prevId === id ? null : id));
   };
-  let blockView = true;
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);

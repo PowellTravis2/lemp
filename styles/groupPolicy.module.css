@@ -9,6 +9,7 @@
     max-width: 100%;
     padding: 0.75%;
     border-radius: 10px;
+    margin-bottom: 0.75%;
 }
 
 .gpLineName {
@@ -30,11 +31,38 @@
     /* gap: 16px;  */
     justify-content: start;
     left: 25%;
-    transform: translateX(31%);
+    transform: translateX(25%);
     max-width: 65%;
 }
 
+.boldButton {
+    font-weight: bold; /* Makes the text inside buttons bold */
+    color: #0056b3;
+}
+
+.doneButton {
+    font-weight: bold; /* Makes the text inside buttons bold */
+    color: green;
+}
+
 .expandedDetails {
-    grid-area: 2 / 1 / 2 / 3;
-    max-width: 57%; 
+    grid-area: 2 / 1 / 3 / 6;
+    /* max-width: 57%; */
+}
+
+.policySettings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 0px;
+}
+.policyDetails {
+    grid-area: 1 / 1 / 2 / 2;
+    /* display: block; */
+}
+
+.policySchedule {
+    grid-area: 1 / 2 / 2 / 3;
+    /* display: block; */
 }

@@ -14,13 +14,11 @@ export default function Systems() {
   const toggleExpand = (id) => {
       setExpandedSystemId((prevId) => (prevId === id ? null : id));
   };
-  let blockView = true;
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
       const res = await fetch('/api/data/server');
       const data = await res.json();
-      // console.log(data);
       setData(data);
       setIsLoading(false);
     }

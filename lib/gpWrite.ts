@@ -11,7 +11,7 @@ const connectionConfig = {
 export async function gpWrite({system, key, value}: {system: String, key: String}) {
     const connection = await mysql.createConnection(connectionConfig);
     try {
-        const query = `UPDATE GroupPolicy SET \`${key}\` = ? WHERE name = ?`;
+        const query = `UPDATE GroupPolicy SET \`${key}\` = ? WHERE id = ?`;
         const [result] = await connection.execute(query, [value, system]);
         connection.end()
         return result

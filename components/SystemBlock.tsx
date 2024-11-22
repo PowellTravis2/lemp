@@ -16,7 +16,6 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
 
     const handleSave = () => {
         setIsEditing(false);
-        // Logic to save editedSystem values
     };
 
     const handleChange = (e) => {
@@ -61,7 +60,7 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
             </div>
             <div className={systemBlock.systemIP}>
                 <p>{system.ipAddress}</p>
-                <p>{system.dn}</p>
+                {/* <p>{system.dn}</p> */}
             </div>
             <div className={systemBlock.systemDropDown}>
                 <button onClick={toggleExpand}>
@@ -85,22 +84,12 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
                             </div>
                             <div className="field">
                                 <label className={systemBlock.boldLabel}>IP Address:</label>
-                                <input
-                                    type="text"
-                                    name="ipAddress"
-                                    value={editedSystem.ipAddress}
-                                    onChange={handleChange}
-                                />
+                                <p>{editedSystem.ipAddress}</p>
                             </div>
-                            <div className="field">
+                            {/* <div className="field">
                                 <label className={systemBlock.boldLabel}>DN:</label>
-                                <input
-                                    type="text"
-                                    name="dn"
-                                    value={editedSystem.dn}
-                                    onChange={handleChange}
-                                />
-                            </div>
+                                <p>{editedSystem.dn}</p>
+                            </div> */}
                             <div className="field">
                                 <label className={systemBlock.boldLabel}>Location:</label>
                                 <input
@@ -137,13 +126,13 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
                                     onChange={handleChange}
                                 />
                             </div>
-                            <button className={systemBlock.holdButton} onClick={handleSave}>Done</button>
+                            <button className={systemBlock.doneButton} onClick={handleSave}>Done</button>
                         </div>
                     ) : (
                         <div>
                             <p><strong>OS:</strong> {editedSystem.os}</p>
                             <p><strong>IP Address:</strong> {editedSystem.ipAddress}</p>
-                            <p><strong>DN:</strong> {editedSystem.dn}</p>
+                            {/* <p><strong>DN:</strong> {editedSystem.dn}</p> */}
                             <p><strong>Location:</strong> {editedSystem.location}</p>
                             <p><strong>Rack:</strong> {editedSystem.rack}</p>
                             <p><strong>Rack Location:</strong> {editedSystem.rackUnits}</p>

@@ -3,9 +3,9 @@
     color: #0056b3;
 }
 
-.boldButton:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
+.doneButton {
+    font-weight: bold; /* Makes the text inside buttons bold */
+    color: green;
 }
 
 .container {
@@ -27,6 +27,7 @@
     margin-top: 20px;
     border-top: 2px solid #e8e8e8;;
     padding-top: 15px;
+    flex: 1 1 auto;
 }
 
 .expandedDetails.editMode {
@@ -155,4 +156,5 @@
     font-size: 0.9em;
     color: #888;
     margin-top: 10px;
+    word-wrap: break-word;
 }
