@@ -35,6 +35,22 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
         });
     };
 
+    const handleToggle = () => {
+        // Calculate new toggle state
+        const newValue = editedSystem.adminOnly === 0 ? 1 : 0;
+        console.log(newValue)
+        // Create synthetic event
+        const syntheticEvent = {
+            target: {
+                name: "adminOnly", // Matches the state key for the toggle
+                value: newValue,
+            },
+        };
+
+        // Reuse handleChange
+        handleChange(syntheticEvent);
+    };
+
     return (
         <div className={systemBlock.container}>
             <div className={systemBlock.systemLogo}>
@@ -126,6 +142,36 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
                                     onChange={handleChange}
                                 />
                             </div>
+                            <div className="field">
+                                <p className={systemBlock.boldLabel}>Admin Only: {editedSystem.adminOnly === 1 ? "True" : "False"}</p>
+                                <div
+                                    onClick={handleToggle}
+                                    style={{
+                                        display: "inline-block",
+                                        width: "50px",
+                                        height: "25px",
+                                        borderRadius: "25px",
+                                        backgroundColor: editedSystem.adminOnly === 1 ? "green" : "gray",
+                                        position: "relative",
+                                        cursor: "pointer",
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            width: "23px",
+                                            height: "23px",
+                                            backgroundColor: "white",
+                                            borderRadius: "50%",
+                                            position: "absolute",
+                                            top: "1px",
+                                            left: editedSystem.adminOnly === 1 ? "25px" : "1px",
+                                            transition: "left 0.2s",
+                                        }}
+                                    ></div>
+                                </div>
+                            </div>
+                            <br></br>
+
                             <button className={systemBlock.doneButton} onClick={handleSave}>Done</button>
                         </div>
                     ) : (
@@ -137,6 +183,9 @@ export default function SystemBlock({ system, isExpanded, toggleExpand }) {
                             <p><strong>Rack:</strong> {editedSystem.rack}</p>
                             <p><strong>Rack Location:</strong> {editedSystem.rackUnits}</p>
                             <p><strong>Wazuh System ID:</strong> {editedSystem.wazuhID}</p>
+                            {/* <label className={systemBlock.boldLabel}>Admin Only:</label> */}
+                            <p><strong>Admin Only:</strong> {editedSystem.adminOnly === 1 ? "True" : "False"}</p>
+                            <br></br>
                             {session?.roles.includes("Admin") ? (
                                 <button className={systemBlock.boldButton} onClick={handleEdit}>Edit</button>
                             ) : (

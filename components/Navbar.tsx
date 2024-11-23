@@ -13,15 +13,15 @@ export default function Navbar({ navTarget }: { navTarget: string }) {
         <>
             {/* LEMP Heading and Horizontal Line */}
             <div className={styles.headerContainer}>
-                <h1 className={styles.websiteName}>LEMP</h1>
+                {/* <h1 className={styles.websiteName}>LEMP</h1> */}
                 <div className={styles.horizontalLine}></div>
             </div>
-            
+
             {/* Navigation Bar */}
-            <div className={navStyles.barGroup}>
-                <ul className={navStyles.navGroup}>
-                    {session ? (
-                        session?.roles.includes("Admin") ? (
+            { session ? (
+                <div className={navStyles.barGroup}>
+                    <ul className={navStyles.navGroup}>
+                        {session?.roles.includes("Admin") ? (
                             <>
                                 {navTarget === "home" ? (
                                     <li className={`${navStyles.navItem} ${navStyles.navItemActive}`}><Link href="/"><h3>Home</h3></Link></li>
@@ -64,12 +64,12 @@ export default function Navbar({ navTarget }: { navTarget: string }) {
                                 )}
                                 <li className={`${navStyles.navItem}`}><button onClick={() => signOut()}><Image src="/logout.svg" width={20} height={20} alt="Logout Button"></Image></button></li>
                             </>
-                        )
-                    ) : (
-                        <button className={navStyles.Login} onClick={() => signIn() }>Sign in</button>
-                    )}
-                </ul>
-            </div>
+                        )}
+                    </ul>
+                </div>
+            ) : (
+            <button className={navStyles.Login} onClick={() => signIn()}>Sign in</button>
+        )}
         </>
     );
 }

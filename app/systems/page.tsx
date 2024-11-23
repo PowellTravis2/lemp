@@ -33,6 +33,7 @@ export default function Systems() {
   return (
     <SessionProvider>
       <Navbar navTarget="systems" />
+      
       <div className={`${global.usefulArea} ${systems.gridArea}`}>
         {
           data && data.map((item, index) => (
