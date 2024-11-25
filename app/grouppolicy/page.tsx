@@ -38,10 +38,10 @@ export default function GroupPolicy() {
         {
           data && data.map((item, index) => (
             <GPLine
-                    key={item.name}
+                    key={item.id}
                     gp={item}
-                    isExpanded={expandedSystemId === item.name}
-                    toggleExpand={() => toggleExpand(item.name)}
+                    isExpanded={expandedSystemId === item.id}
+                    toggleExpand={() => toggleExpand(item.id)}
                 />
           )
           )

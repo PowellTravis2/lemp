@@ -1,10 +1,10 @@
 .boldButton {
-    font-weight: bold; /* Makes the text inside buttons bold */
+    font-weight: bold; 
     color: #0056b3;
 }
 
 .doneButton {
-    font-weight: bold; /* Makes the text inside buttons bold */
+    font-weight: bold; 
     color: green;
 }
 

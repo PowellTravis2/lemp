@@ -68,6 +68,21 @@ export async function mysqlServerInit() {
                 valueField VARCHAR(255)
             );`
         );
+        const [resultSOU, fieldsSOU] = await connection.query(
+            `INSERT IGNORE INTO ServerSettings (settingName, valueField) VALUES ('searchableOUs', '');`
+        );
+        const [resultADU, fieldsADU] = await connection.query(
+            `INSERT IGNORE INTO ServerSettings (settingName, valueField) VALUES ('ad_user', '');`
+        );
+        const [resultADUP, fieldsADUP] = await connection.query(
+            `INSERT IGNORE INTO ServerSettings (settingName, valueField) VALUES ('ad_user_password', '');`
+        );
+        const [resultOUD, fieldsOUD] = await connection.query(
+            `INSERT IGNORE INTO ServerSettings (settingName, valueField) VALUES ('ou_discovery_interval', '*/30 * * * *');`
+        );
+        const [resultGPASD, fieldsGPASD] = await connection.query(
+            `INSERT IGNORE INTO ServerSettings (settingName, valueField) VALUES ('gp_auto_schedule_deploy', '*/45 * * * *');`
+        );
         connection.end()
         console.log("Server Settings Table initialized / Verified;"); // results contains rows returned by server
     } catch (err) {

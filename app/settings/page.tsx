@@ -33,7 +33,7 @@ export default function Systems() {
       {
           data && data.map((item, index) => (
             <SettingBlock
-                    key={item.name}
+                    key={item.id}
                     setting={item}
                 />
           )
