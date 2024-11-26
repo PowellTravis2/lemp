@@ -8,6 +8,8 @@ export async function GET(req) {
     const session = await getServerSession(authOptions)
     if(session) {
         return NextResponse.json(await settingsQuery(), { status: 200})
+    } else {
+        return NextResponse.json({ status: 403})
     }
 }
 
@@ -18,5 +20,7 @@ export async function PUT(req) {
         let settingName = req.headers.get('valName');
         let settingValue = req.headers.get('valVal');
         return NextResponse.json(await settingsWrite({id: id, settingName: settingName, settingValue: settingValue}), {status: 200})
+    } else {
+        return NextResponse.json({ status: 403})
     }
 }

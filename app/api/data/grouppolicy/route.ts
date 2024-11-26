@@ -8,6 +8,8 @@ export async function GET(req) {
     const session = await getServerSession(authOptions)
     if(session) {
         return NextResponse.json(await gpQuery(), { status: 200})
+    } else {
+        return NextResponse.json({ status: 403})
     }
     
 }
@@ -19,5 +21,7 @@ export async function PUT(req) {
         let systemKey = req.headers.get('valName');
         let systemVal = await req.json();
         return NextResponse.json(await gpWrite({system: systemName, key: systemKey, value: systemVal.content}), { status: 200})
+    } else {
+        return NextResponse.json({ status: 403})
     }
 }

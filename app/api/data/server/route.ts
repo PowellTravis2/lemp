@@ -10,7 +10,7 @@ export async function GET(req) {
         var userIsAdmin = session?.roles.includes("Admin")
         return NextResponse.json(await serverQuery({isAdmin: userIsAdmin}), { status: 200})
     } else {
-        return NextResponse.json({ status: 500})
+        return NextResponse.json({ status: 403})
     }
 }
 
@@ -23,6 +23,6 @@ export async function PUT(req) {
         let systemVal = req.headers.get('valVal');
         return NextResponse.json(await serverSQLWrite({system: systemName, key: systemKey, value: systemVal}), { status: 200})
     } else {
-        return NextResponse.json({ status: 500})
+        return NextResponse.json({ status: 403})
     }
 }
