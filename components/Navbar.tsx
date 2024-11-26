@@ -43,6 +43,7 @@ export default function Navbar({ navTarget }: { navTarget: string }) {
                                 ) : (
                                     <li className={`${navStyles.navItem} ${navStyles.Admin}`}><Link href="/settings"><h3>Settings</h3></Link></li>
                                 )}
+                                {/* <li className={`${navStyles.navItem}`}><button onClick={() => signOut()}><Image src="/logout.svg" width={20} height={20} alt="Logout Button"></Image></button></li> */}
                                 <li className={`${navStyles.navItem}`}><button onClick={() => signOut()}><span className={navStyles.userName}>{"Log Out:  " + (session?.user?.name).split(" ")[0]}</span></button></li>
                             </>
                         ) : (
@@ -62,7 +63,8 @@ export default function Navbar({ navTarget }: { navTarget: string }) {
                                 ) : (
                                     <li className={navStyles.navItem}><Link href="/grouppolicy"><h3>Group Policies</h3></Link></li>
                                 )}
-                                <li className={`${navStyles.navItem}`}><span>{session?.user?.name}</span><button onClick={() => signOut()}><Image src="/logout.svg" width={20} height={20} alt="Logout Button"></Image></button></li>
+                                {/* <li className={`${navStyles.navItem}`}><button onClick={() => signOut()}><Image src="/logout.svg" width={20} height={20} alt="Logout Button"></Image></button></li> */}
+                                <li className={`${navStyles.navItem}`}><button onClick={() => signOut()}><span className={navStyles.userName}>{"Log Out:  " + (session?.user?.name).split(" ")[0]}</span></button></li>
                             </>
                         )}
                     </ul>
