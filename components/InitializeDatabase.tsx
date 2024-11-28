@@ -20,7 +20,12 @@ const InitializeDatabase = () => {
     }
   }, []);  // Empty dependency array to only run on mount
 
-  return <div>Loading...</div>;
+  if (initialized) return (
+    <p>Loading...</p>
+  );
+  return (
+    <></>
+  )
 };
 
 export default InitializeDatabase;

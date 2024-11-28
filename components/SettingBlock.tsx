@@ -169,6 +169,22 @@ export default function SettingBlock({ setting }) {
             </div>
           </div>
         </>
+      ) : setting.settingName === "reachable_job" ? (
+        <>
+        <p className={settings.GroupingTitle}>Reachable Schedule</p>
+          <div>
+            {/* <label className={settings.boldLabel}>CN User Password</label> */}
+            <div className={settings.adUserInput}>
+            <input
+              className={settings.adUserInput}
+              type="text"
+              name="valueField"
+              value={editedSystem.valueField}
+              onChange={handleChange}
+            />
+            </div>
+          </div>
+        </>
       ) : (
         <></>
       )}

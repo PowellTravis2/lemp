@@ -1,4 +1,3 @@
-// Will run any tasks that require to be run / tested before the system boots
 import mysql from "mysql2/promise";
 
 const connectionConfig = {
@@ -31,7 +30,7 @@ export async function mysqlServerInit() {
             );`
         );
 
-        console.log("Server Table initialized / Verified;"); // results contains rows returned by server
+        console.log("Server Table initialized / Verified;");
     } catch (err) {
         console.log(err);
         connection.end()
@@ -52,7 +51,7 @@ export async function mysqlServerInit() {
             );`
         );
 
-        console.log("Group Policy Table initialized / Verified;"); // results contains rows returned by server
+        console.log("Group Policy Table initialized / Verified;");
     } catch (err) {
         console.log(err);
         connection.end()
@@ -83,8 +82,11 @@ export async function mysqlServerInit() {
         const [resultGPASD, fieldsGPASD] = await connection.query(
             `INSERT IGNORE INTO ServerSettings (settingName, valueField) VALUES ('gp_auto_schedule_deploy', '*/45 * * * *');`
         );
+        const [resultREACHABLE, fieldsREACHABLE] = await connection.query(
+            `INSERT IGNORE INTO ServerSettings (settingName, valueField) VALUES ('reachable_job', '*/10 * * * *');`
+        );
         connection.end()
-        console.log("Server Settings Table initialized / Verified;"); // results contains rows returned by server
+        console.log("Server Settings Table initialized / Verified;"); 
     } catch (err) {
         console.log(err);
         connection.end()
