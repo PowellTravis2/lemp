@@ -1,0 +1,160 @@
+.boldButton {
+    font-weight: bold; 
+    color: #0056b3;
+}
+
+.doneButton {
+    font-weight: bold; 
+    color: green;
+}
+
+.container {
+    background-color: #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    padding-top: 80px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.expandedDetails {
+    margin-top: 20px;
+    border-top: 2px solid #e8e8e8;;
+    padding-top: 15px;
+    flex: 1 1 auto;
+}
+
+.expandedDetails.editMode {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.systemLogo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.systemLogo img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.systemName {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.systemStatus {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.systemReachable {
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.systemUnreachable {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.systemUnknown {
+    width: 15px;
+    height: 15px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.systemIP p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+    text-align: center;
+}
+
+.systemDropDown {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.systemDropDown button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.systemDropDown button:hover {
+    background-color: #0056b3;
+}
+
+.expandedDetails label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.expandedDetails input {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.expandedDetails input:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #ffffff;
+}
+
+.expandedDetails button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.expandedDetails button:hover {
+    background-color: #218838;
+}
+
+.expandedDetails p {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 10px;
+    word-wrap: break-word;
+}

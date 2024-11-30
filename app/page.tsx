@@ -1,12 +1,16 @@
-import Image from "next/image";
-import Navbar from "../components/Navbar"
-import Link from 'next/link'
-import InitializeDatabase from "@/components/InitializeDatabase";
-export default function Home() {
+'use client'
+import Navbar from "../components/Navbar";
+import Home from "@/components/Home";
+import global from "@/styles/global.module.css";
+import { SessionProvider } from "next-auth/react";
+
+export default function HomePage() {
   return (
-    <>
-      {/* <InitializeDatabase/> */}
-      <Navbar navTarget="home"/>
-    </>
+    <SessionProvider>
+      <Navbar navTarget="home" />
+      <div className={global.usefulArea}>
+        <Home /> 
+      </div>
+    </SessionProvider>
   );
 }

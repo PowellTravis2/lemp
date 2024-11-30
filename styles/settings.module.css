@@ -1,0 +1,70 @@
+.SettingBlock {
+    color: black;
+    background-color: #e8e8e8;
+    padding: 1.5%;
+    border-radius: 10px;
+}
+
+.SettingsArea {
+    display: flex;
+    flex-wrap: wrap;
+    break-inside: avoid;
+    flex-direction:unset;      
+    align-items: flex-start;
+    gap: 10px; 
+    justify-content: start;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.GroupingTitle {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.ouLineItem {
+    padding: 3%;
+    background-color: #dbdbdb;
+    margin-bottom: 1.5%;
+    border-radius: 10px;
+}
+
+.removeOU {
+    color: red;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.removeOU:hover {
+    color: red;
+    background-color: #e8e8e8;
+}
+
+.AddOUButton {
+    margin-left: 3%;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.AddOUButton:hover {
+    color: green;
+    background-color: #dbdbdb;
+}
+
+.OUInput {
+    width: 50%;
+}
+
+
+.boldLabel {
+    font-weight: bold;
+}
+
+.adUserInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}

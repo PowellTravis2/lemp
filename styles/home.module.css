@@ -1,0 +1,85 @@
+/* LEMP Website Name Styling */
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0; /* Ensure it aligns at the top */
+    margin-bottom: 20px; /* Add space between the heading and the navbar */
+}
+
+.websiteName {
+    font-family: "Poppins", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #003366;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-top: 1%; /* Adjust this value to move LEMP down */
+    padding-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 0; /* Ensure margin isn't pushing it upwards */
+}
+
+.horizontalLine {
+    position: absolute;
+    top: 18%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333; 
+    z-index: -1;
+}
+
+.boxContainer {
+
+}
+
+.boxText {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 4%;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  float: right;
+}
+
+.dataBlocks {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 1%;
+  color: black; 
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  float: right;
+}
+
+.dataCard {
+  background-color: #e8e8e8;
+  width: 26%;
+  text-align: center;
+  border-radius: 10px;
+  min-height: 75px;
+}
+
+.dataCardTitle {
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.dataCardStatistic {
+  /* font-weight: bold; */
+  font-size: large;
+}

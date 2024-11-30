@@ -1,0 +1,11 @@
+.gridArea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Adjust spacing between blocks */
+    justify-content: start;
+    /* left: 25%; */
+    /* transform: translateX(5%); */
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
