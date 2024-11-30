@@ -103,7 +103,27 @@ export default function SettingBlock({ setting }) {
             </div>
           </>
         ) : (
-          <></>
+          <><p className={settings.GroupingTitle}>Monitored OU's</p>
+          <ul>
+            {editedSystem.valueField.split(';').map((ou, index) => (
+              <li key={index} className={settings.ouLineItem}>
+                {ou}{' '}
+                <button onClick={() => handleRemoveOU(ou)} className={settings.removeOU}>Remove</button>
+              </li>
+            ))}
+          </ul>
+
+          <div>
+            <input
+              className={settings.OUInput}
+              type="text"
+              value={newOU}
+              onChange={(e) => setNewOU(e.target.value)}
+              placeholder="Enter new OU"
+            />
+            <button onClick={handleAddOU} className={settings.AddOUButton}>Add OU</button>
+          </div>
+          </>
         )
       ) : setting.settingName === "ad_user" ? (
         <>
