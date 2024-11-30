@@ -104,14 +104,6 @@ export default function SettingBlock({ setting }) {
           </>
         ) : (
           <><p className={settings.GroupingTitle}>Monitored OU's</p>
-          <ul>
-            {editedSystem.valueField.split(';').map((ou, index) => (
-              <li key={index} className={settings.ouLineItem}>
-                {ou}{' '}
-                <button onClick={() => handleRemoveOU(ou)} className={settings.removeOU}>Remove</button>
-              </li>
-            ))}
-          </ul>
 
           <div>
             <input
