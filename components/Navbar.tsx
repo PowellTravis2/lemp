@@ -13,7 +13,7 @@ export default function Navbar({ navTarget }: { navTarget: string }) {
         <>
             {/* LEMP Heading and Horizontal Line */}
             <div className={styles.headerContainer}>
-                {/* <h1 className={styles.websiteName}>LEMP</h1> */}
+                <h1 className={styles.websiteName}>LEMP</h1>
                 <div className={styles.horizontalLine}></div>
             </div>
 
